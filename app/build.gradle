@@ -112,4 +112,8 @@ dependencies {
 
     debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.9.1'
 
+    // mockito
+    testImplementation 'org.mockito:mockito-core:4.7.0'
+    androidTestImplementation 'org.mockito:mockito-core:4.7.0'
+
 }
