@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/plantsFragment">
+
+    <fragment
+        android:id="@+id/plantsFragment"
+        android:name="com.amo.prep1.ui.plants.PlantsFragment"
+        tools:layout="@layout/fragment_plants"
+        android:label="Plants" >
+        <action
+            android:id="@+id/action_plantsFragment_to_plantDetailFragment"
+            app:destination="@id/plantDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/plantDetailFragment"
+        android:name="com.amo.prep1.ui.plants.PlantDetailFragment"
+        android:label="Detail"
+        tools:layout="@layout/fragment_plant_detail" >
+        <argument
+            android:name="plant"
+            app:argType="string" />
+    </fragment>
+
+
+</navigation>
