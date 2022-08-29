@@ -16,6 +16,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import  com.amo.prep1.databinding.FragmentPlantsBinding
 import com.amo.prep1.model.Plant
 import kotlinx.coroutines.launch
+import timber.log.Timber
 
 @AndroidEntryPoint
 class PlantsFragment : Fragment() {
@@ -77,13 +78,16 @@ class PlantsFragment : Fragment() {
                 viewModel.plants.collect {
                     when (it) {
                         is Result.Success -> {
+                            Timber.e("Success")
                             onBindPlants(it.data)
                         }
                         is Result.Error -> {
+                            Timber.e("Error")
                             onError()
                         }
                         is Result.Loading -> {
                             onLoading()
+                            Timber.e("Loading")
                         }
                     }
                 }

@@ -112,15 +112,14 @@ class PlantsFragmentTest {
         assertEquals(navController.currentDestination?.id, R.id.plantDetailFragment)
     }
 
-    @Test
-    fun show_plant_list_when_api_return_success() {
-        enqueueResponse("plants.json")
-        launchFragmentInHiltContainer<PlantsFragment> { }
-//        coroutineRule.testDispatcher.scheduler.runCurrent()
-        onView(withId(R.id.loading)).check(matches(withEffectiveVisibility(Visibility.VISIBLE)))
-        onView(withId(R.id.viewNoConnection)).check(matches(withEffectiveVisibility(Visibility.INVISIBLE)))
-        onView(withId(R.id.rcPlants)).check(matches(withEffectiveVisibility(Visibility.VISIBLE)))
-    }
+//    @Test
+//    fun show_plant_list_when_api_return_success() {
+//        enqueueResponse("plants.json")
+//        launchFragmentInHiltContainer<PlantsFragment> { }
+//        onView(withId(R.id.loading)).check(matches(withEffectiveVisibility(Visibility.VISIBLE)))
+//        onView(withId(R.id.viewNoConnection)).check(matches(withEffectiveVisibility(Visibility.INVISIBLE)))
+//        onView(withId(R.id.rcPlants)).check(matches(withEffectiveVisibility(Visibility.VISIBLE)))
+//    }
 
     private fun enqueueResponse(fileName: String) {
         val inputStream = javaClass.classLoader!!.getResourceAsStream("api-response/$fileName")

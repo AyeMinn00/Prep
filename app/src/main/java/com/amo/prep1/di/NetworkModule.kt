@@ -1,7 +1,7 @@
 package com.amo.prep1.di
 
-import com.amo.prep1.data.DataSource
-import com.amo.prep1.data.DefaultDataSource
+import com.amo.prep1.data.remote.RemoteDataSource
+import com.amo.prep1.data.remote.DefaultRemoteDataSource
 import com.amo.prep1.data.remote.ApiService
 import dagger.Provides
 import okhttp3.OkHttpClient
@@ -41,12 +41,6 @@ object NetworkModule {
             .addConverterFactory(GsonConverterFactory.create())
             .build()
         return retrofit.create(ApiService::class.java)
-    }
-
-    @Provides
-    @Singleton
-    fun provideDataSource(apiService: ApiService) : DataSource{
-        return DefaultDataSource(apiService)
     }
 
 }

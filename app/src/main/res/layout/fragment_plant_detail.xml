@@ -6,8 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".ui.plants.PlantDetailFragment">
 
-
-
     <TextView
         android:id="@+id/plantName"
         android:layout_width="match_parent"
@@ -18,5 +16,7 @@
         android:textColor="@color/black"
         app:layout_constraintTop_toTopOf="parent"
         android:textSize="22sp" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

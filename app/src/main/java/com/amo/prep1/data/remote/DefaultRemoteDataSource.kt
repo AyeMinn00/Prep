@@ -1,17 +1,18 @@
-package com.amo.prep1.data
+package com.amo.prep1.data.remote
 
-import com.amo.prep1.data.remote.ApiService
 import com.amo.prep1.model.Plant
 import com.amo.prep1.model.Result
 import com.amo.prep1.model.Result.Success
 import com.amo.prep1.model.Result.Error
 import kotlinx.coroutines.delay
+import timber.log.Timber
 import java.lang.Exception
 
-class DefaultDataSource(private val apiService: ApiService) : DataSource {
+class DefaultRemoteDataSource(private val apiService: ApiService) : RemoteDataSource {
 
     override suspend fun getAllPlants(): Result<List<Plant>> {
-        delay(1000)
+        Timber.e("getAllPlants invoke")
+        delay(3000)
         try {
             val response = apiService.getAllPlants()
             if (response.isSuccessful) {

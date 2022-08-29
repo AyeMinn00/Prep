@@ -1,9 +1,10 @@
 package com.amo.prep1.data
 
+import com.amo.prep1.data.remote.RemoteDataSource
 import com.amo.prep1.model.Plant
 import com.amo.prep1.model.Result
 
-class FakeDataSource(private var hasError: Boolean = false ) : DataSource {
+class FakeDataSource(private var hasError: Boolean = false ) : RemoteDataSource {
 
     fun setHasError(error: Boolean) {
         hasError = error
